@@ -9,7 +9,7 @@ import HomePage from "./components/home";
 import { cn } from "@/lib/utils";
 import { PortableText } from "next-sanity";
 import { slugify } from "@/utils/helpers";
-import { urlForImage } from "@/sanity/lib/image";
+import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Toc from "@/components/toc";
 import About from "./components/about/about";
@@ -196,7 +196,7 @@ export default async function Home() {
 const myPortableTextComponents = {
   types: {
     image: ({ value }: any) => (
-      <Image src={urlForImage(value)} alt="Post" width={700} height={700} />
+      <Image src={urlFor(value).url()} alt="Post" width={700} height={700} />
     ),
   },
   block: {
