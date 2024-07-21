@@ -1,9 +1,5 @@
 import React from "react";
-import AboutImg from "@/app/(client)/assests/maran-12.png";
-import CV from "../../assests/maran-12.png";
 import Info from "./info";
-import AnimationWarpper from "@/components/animationwarpper";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 const About = () => {
   return (

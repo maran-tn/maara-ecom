@@ -7,7 +7,6 @@
 import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
-import logo from "/public/next.svg";
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import { apiVersion, dataset, projectId } from "./sanity/env";
@@ -17,7 +16,6 @@ import { media, mediaAssetSource } from "sanity-plugin-media";
 export default defineConfig({
   basePath: "/studio",
   projectId,
-  icon: logo,
   dataset,
   // Add and edit the content schema in the './sanity/schema' folder
   schema,

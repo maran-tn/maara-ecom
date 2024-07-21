@@ -1,25 +1,18 @@
 import { client } from "@/sanity/lib/client";
-import Header from "@/components/header";
 import { Post } from "@/utils/interface";
-import PostComponent from "@/components/postcomponent";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { HomeTrend } from "@/components/album-artwork";
-import { listenNowAlbums, madeForYouAlbums } from "@/components/data/album";
+import { listenNowAlbums } from "@/components/data/album";
 import HomePage from "./components/home";
 import { cn } from "@/lib/utils";
-import { PortableText } from "next-sanity";
-import { slugify } from "@/utils/helpers";
-import { urlFor } from "@/sanity/lib/image";
-import Image from "next/image";
-import Toc from "@/components/toc";
-import About from "./components/about/about";
 import Contact from "./components/contact/contact";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
-import { Badge, badgeVariants } from "@/components/ui/badge";
+import { badgeVariants } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Github, Heart, Share } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import About from "./components/about/about";
 
 async function getPosts() {
   const query = `
@@ -193,66 +186,3 @@ export default async function Home() {
   );
 }
 
-const myPortableTextComponents = {
-  types: {
-    image: ({ value }: any) => (
-      <Image src={urlFor(value).url()} alt="Post" width={700} height={700} />
-    ),
-  },
-  block: {
-    h2: ({ value }: any) => (
-      <h2
-        id={slugify(value.children[0].text)}
-        className="text-3xl font-bold mb-3"
-      >
-        {value.children[0].text}
-      </h2>
-    ),
-    h3: ({ value }: any) => (
-      <h3
-        id={slugify(value.children[0].text)}
-        className="text-2xl font-bold mb-3"
-      >
-        {value.children[0].text}
-      </h3>
-    ),
-    h4: ({ value }: any) => (
-      <h4
-        id={slugify(value.children[0].text)}
-        className="text-2xl font-bold mb-3"
-      >
-        {value.children[0].text}
-      </h4>
-    ),
-    h5: ({ value }: any) => (
-      <h5
-        id={slugify(value.children[0].text)}
-        className="text-2xl font-bold mb-3"
-      >
-        {value.children[0].text}
-      </h5>
-    ),
-    h6: ({ value }: any) => (
-      <h6
-        id={slugify(value.children[0].text)}
-        className="text-xl font-bold mb-3"
-      >
-        {value.children[0].text}
-      </h6>
-    ),
-  },
-};
-
-const richTextStyles = `
-mt-14
-text-justify
-max-w-2xl
-m-auto
-prose-headings:my-5
-prose-heading:text-2xl
-prose-p:mb-5
-prose-p:leading-7
-prose-li:list-disc
-prose-li:leading-7
-prose-li:ml-4
-`;
