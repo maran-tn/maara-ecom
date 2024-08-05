@@ -1,5 +1,4 @@
-import AddComment from "@/components/addcomment";
-import AllComments from "@/components/allcomments";
+
 import Header from "@/components/header";
 import Toc from "@/components/toc";
 import { slugify } from "@/utils/helpers";
@@ -97,33 +96,8 @@ const page = async ({ params, searchParams }: Params) => {
   return (
     <div>
       <Header title={post?.title} />
-      <div className="text-center">
-        <span className={`${dateFont?.className} text-purple-500`}>
-          {new Date(post?.publishedAt).toDateString()}
-        </span>
-        <div className="mt-5">
-          {post?.tags?.map((tag) => (
-            <Link key={tag?._id} href={`/tag/${tag.slug.current}`}>
-              <span className="mr-2 p-1 rounded-sm text-sm lowercase dark:bg-gray-950 border dark:border-gray-900">
-                #{tag.name}
-              </span>
-            </Link>
-          ))}
-        </div>
-        <Toc headings={post?.headings} />
-        <div className={richTextStyles}>
-          <PortableText
-            value={post?.body}
-            components={myPortableTextComponents}
-          />
-          <AddComment postId={post?._id} />
-          <AllComments
-            comments={post?.comments || []}
-            slug={post?.slug?.current}
-            commentsOrder={commentsOrder.toString()}
-          />
-        </div>
-      </div>
+      
+    blog page
     </div>
   );
 };
