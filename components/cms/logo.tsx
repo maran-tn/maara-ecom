@@ -1,5 +1,6 @@
+import Image from 'next/image';
 import logo from '/nextjs.svg';
 
 export const MyLogo = (
-  <img src={logo} alt='My Logo' width={25} height={25} />
+  <Image src={logo} alt='My Logo' width={25} height={25} />
 );

@@ -25,13 +25,10 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { Menu, Search, ShoppingBag, UserRound } from "lucide-react";
 import ThemeSwitch from "./theme-switch";
-import { SlBag } from "react-icons/sl";
 import Link from "next/link";
 const SheetDemo = () => {
   const isDesktop = useMediaQuery("(min-width: 768px)");
@@ -161,7 +158,7 @@ export const HeaderUi = () => {
                     className="inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-9 py-2 mr-2 px-1 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
                   >
                     <Menu />
-                    
+
                     <span className="sr-only">Toggle Menu</span>
                   </Button>
                 </DialogTrigger>
@@ -212,17 +209,13 @@ export const HeaderUi = () => {
                 )}
               </div>
               <nav className="flex items-center gap-1">
-                <Link
-                  href="/account"
-                >
+                <Link href="/account">
                   <div className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground py-2 h-8 w-8 px-0">
                     <UserRound />
                     <span className="sr-only">Profile</span>
                   </div>
                 </Link>
-                <Link
-                  href="/cart"
-                >
+                <Link href="/cart">
                   <div className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground py-2 h-8 w-8 px-0">
                     <ShoppingBag />
                     <span className="sr-only">Cart</span>
