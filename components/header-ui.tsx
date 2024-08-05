@@ -39,7 +39,7 @@ const SheetDemo = () => {
         <DialogHeader>
           <DialogTitle>Edit profile</DialogTitle>
           <DialogDescription>
-            Make changes to your profile here. Click save when you're done.
+            Make changes to your profile here. Click save when you re done.
           </DialogDescription>
         </DialogHeader>
       </DialogContent>
@@ -55,13 +55,13 @@ const SheetDemo = () => {
       <div className="grid gap-4 py-4">
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1">
-            <AccordionTrigger>Men's</AccordionTrigger>
+            <AccordionTrigger>Men s</AccordionTrigger>
             <AccordionContent>Shirt</AccordionContent>
             <AccordionContent>T-Shirt</AccordionContent>
             <AccordionContent>Oversized Tees</AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger>Men's</AccordionTrigger>
+            <AccordionTrigger>Men s</AccordionTrigger>
             <AccordionContent>Shirt</AccordionContent>
             <AccordionContent>T-Shirt</AccordionContent>
             <AccordionContent>Oversized Tees</AccordionContent>
