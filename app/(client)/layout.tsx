@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/utils/theme-provider";
-import Navbar from "@/components/navbar";
 
-import { Inter as FontSans, Recursive } from "next/font/google";
+import { Karla as FontSans, Inter, Karla } from "next/font/google";
 
 import { cn } from "@/lib/utils";
 import Footer from "@/components/footer";
+import { HeaderUi } from "@/components/header-ui";
 
-const recursive = Recursive({ subsets: ['latin'] })
-
+const fontSans = Karla({
+  subsets: ["latin"],
+  // variable: "--font-sans",
+});
 export const metadata: Metadata = {
-  title: "MARAN",
-  description: "Graphic Designer and Web Deveopment",
+  title: "MAARA",
+  description: "Ecommerce Store",
 };
 
 export default function RootLayout({
@@ -21,11 +23,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          recursive.className
+        className={cn(fontSans.className,
+          "min-h-screen bg-background antialiased"
+          
         )}
       >
         <ThemeProvider
@@ -34,9 +36,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
-          <Footer />
+          <div className="relative flex flex-col ">
+            <HeaderUi />
+            {/* <Navbar /> */}
+            <main className="bg-gray-50">{children}</main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
